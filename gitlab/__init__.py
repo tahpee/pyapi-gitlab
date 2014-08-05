@@ -1302,7 +1302,6 @@ class Gitlab(object):
         request = requests.get(self.projects_url + "/" + str(project_id) +
                                "/repository/commits", verify=self.verify_ssl,
                                params=data, headers=self.headers)
-        print request.status_code
         if request.status_code == 200:
             return json.loads(request.content.decode("utf-8"))
         else:
